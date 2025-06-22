@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bitcoin Price Predictor</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body style="font-family:sans-serif;text-align:center;">
+    <h2>📈 Bitcoin Price Prediction</h2>
+
+    <canvas id="btcChart" width="600" height="300"></canvas>
+
+    <div style="margin-top:20px;">
+        <h3 id="prediction"></h3>
+        <button onclick="getPrediction()">🔁 Refresh Prediction</button>
+    </div>
+
+    <script>
+        async function renderChart() {
+            const res = await fetch('/chart-data');
+            const data = await res.json();
+            const ctx = document.getElementById('btcChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: data.labels,
+                    datasets: [{
+                        label: 'BTC Price (USD)',
+                        data: data.prices,
+                        borderColor: 'orange',
+                        fill: false
+                    }]
+                }
+            });
+        }
+
+        async function getPrediction() {
+            const res = await fetch('/predict');
+            const data = await res.json();
+            document.getElementById("prediction").innerHTML =
+                `🧠 Predicted Price for Next Day: <b>$${data.predicted_price}</b><br>📅 Latest Known Date: ${data.date}<br>💲 Latest Price: $${data.latest_price}`;
+        }
+
+        renderChart();
+        getPrediction();
+    </script>
+</body>
+</html>
