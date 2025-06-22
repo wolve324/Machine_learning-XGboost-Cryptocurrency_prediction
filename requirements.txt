@@ -3,3 +3,4 @@ pandas
 xgboost
 yfinance
 scikit-learn
+gunicorn
