@@ -1,23 +1,6 @@
 Bitcoin Price Prediction with Live Data
 This project predicts the next day's Bitcoin closing price using XGBoost regression and real-time market data. It also features a clean Flask web interface to display live predictions.
 
-Project Structure
-graphql
-Copy
-Edit
-Bitcoin project/
-├── app.py                   # Flask app (main entry point)
-├── model.py                 # Trains and saves XGBoost model
-├── xgb_model.pkl            # Trained XGBoost model file
-├── prediction_agent.py      # Loads model & fetches live prediction
-├── fetch_live_data.py       # Fetches live Bitcoin market data
-├── BTC-USD.csv              # Historical BTC-USD data (for initial training)
-├── requirements.txt         # Python dependencies
-├── static/
-│   └── style.css            # Web interface styling
-└── templates/
-    └── index.html           # Web interface HTML
-
     
  Features:
 Real-time Bitcoin data fetch using yfinance
