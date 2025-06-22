@@ -28,9 +28,6 @@ Clean modular architecture
 
 Installation & Running Locally: 
 1. Clone the repository
-bash
-Copy
-Edit
 git clone https://github.com/yourusername/bitcoin-price-prediction.git
 cd "Bitcoin project"
 2. Create virtual environment (optional but recommended)
