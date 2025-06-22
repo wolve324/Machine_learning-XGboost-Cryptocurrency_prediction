@@ -40,9 +40,17 @@ cd "Bitcoin project"
    
 Visit http://127.0.0.1:5000 in your browser.
 
+
+
+
  Model Info
 Algorithm: XGBoost Regressor
+
 Input Features: Day number, Open, High, Low, Volume
+
 Target Variable: Next day's Close price
+
+
+
 
 Need deployment help? Just ask!
