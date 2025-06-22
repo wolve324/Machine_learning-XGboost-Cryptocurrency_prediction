@@ -43,7 +43,9 @@ Visit http://127.0.0.1:5000 in your browser.
 
 
 
- Model Info
+ Model Info::
+
+ 
 Algorithm: XGBoost Regressor
 
 Input Features: Day number, Open, High, Low, Volume
